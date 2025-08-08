@@ -1,7 +1,5 @@
-package com.devsuperior.dslearn;
+package com.devsuperior.dslearn.entities;
 
-import com.devsuperior.dslearn.entities.Lesson;
-import com.devsuperior.dslearn.entities.Section;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
