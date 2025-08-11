@@ -2,6 +2,7 @@ package com.devsuperior.dslearn.controller;
 
 import com.devsuperior.dslearn.dto.EmailDTO;
 import com.devsuperior.dslearn.services.EmailService;
+import com.devsuperior.dslearn.services.SendGridEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
