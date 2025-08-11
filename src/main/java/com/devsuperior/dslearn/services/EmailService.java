@@ -1,6 +1,7 @@
 package com.devsuperior.dslearn.services;
 
 import com.devsuperior.dslearn.dto.EmailDTO;
+import com.devsuperior.dslearn.services.exceptions.EmailException;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
 import com.sendgrid.Response;
@@ -38,11 +39,11 @@ public class EmailService {
             Response response = sendGrid.api(request);
             if(response.getStatusCode() >= 400 && response.getStatusCode() <= 500){
                 LOG.error("Error sending email: " + response.getStatusCode());
-            } else {
-                LOG.info("Email sent! Status = " + response.getStatusCode());
+                throw new EmailException(response.getBody());
             }
+                LOG.info("Email sent! Status = " + response.getStatusCode());
         } catch (IOException e){
-            e.printStackTrace();
+            throw new EmailException(e.getMessage());
         }
     }
 }
